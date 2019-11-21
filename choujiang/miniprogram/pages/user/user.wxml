@@ -1,0 +1,1 @@
+<button bindtap="handerClick">点击调用sum云函数</button>

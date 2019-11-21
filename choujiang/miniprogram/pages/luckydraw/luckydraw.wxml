@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="top">
+       <image src="../../images/chou-start.png"></image>
+       <view class="msg">你今天还有三次抽奖机会</view>
+    </view>
+    <view class="middle">
+        <image src="../../images/chou-mid.png"></image>
+        <button class="start" plain bindtap="startChou"></button>
+        <view class="luck-gds flex space-between flex-wrap ">
+            <view wx:for="{{list}}" wx:for-index="idx" wx:key="idx" class="{{idx == currentIdx ? 'active item' :' item'}}">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="bottom">
+      <image src="../../images/chou-end.png"></image>
+    </view>
+    <!-- 遮盖层 -->
+    <view class="mask" wx:if="{{zhongBox}}" bindtap="closeZhongBox"></view>
+    <!-- 中奖信息 -->
+    <view class="zhongjian" wx:if="{{zhongBox}}">
+        <image src="../../images/zhong-suc.png"></image>
+        <view class="zhong-text">{{ zhongMsg }}</view>
+        <view class="zhong-btn" bindtap="closeZhongBox">确定</view>
+    </view>
+</view>
