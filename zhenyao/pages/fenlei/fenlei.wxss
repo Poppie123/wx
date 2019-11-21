@@ -1,0 +1,37 @@
+.swiper-notice {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10rpx 0 10rpx;
+}
+
+.swiper-notice text {
+  font-size: 28rpx;
+  color: #bfbfbf;
+}
+
+.swiper-notice image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.swiper-nav {
+  height: 60rpx;
+  width: 80vw;
+  margin-left: 10rpx;
+}
+
+.swiper-nav swiper-item {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-context {
+  font-size: 28rpx;
+  overflow: hidden;
+  color: #bfbfbf;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2rpx;
+}

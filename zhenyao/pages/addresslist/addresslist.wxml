@@ -1,0 +1,31 @@
+ <view class="main">
+    <view class="address">
+        <radio-group name="radio-group" bindchange="radioChange">
+
+        <view class="addresslist" wx:for="addressList" wx:key="index">
+          <view class="address-mess">
+            <view>
+              <span>{{item.name}}</span>
+              <span>{{item.phone}}</span>
+            </view>
+            <view>{{item.province_text}} {{item.city_text}} {{item.district_text}} {{item.address}}</view>
+          </view>
+          <view class="address-chos fle fle_a_c fle_e">
+            <label>
+              <radio value="{{index}}" checked="{{item.status}}"/>
+              <!-- <input type="radio" name="address" class="xuanzhong" checked="checked" /> -->
+              <span>默认送货地址</span>
+            </label>
+            <view class="shanchu" data-id="{{item.address_id}}" data-idx="{{index}}" bindtap="deleteAddress">删除</view>
+            <view class="bianji" data-id="{{item.address_id}}" data-idx="{{index}}" bindtap="editAddress">编辑</view>
+          </view>
+        </view>
+
+        </radio-group>
+    </view>
+    <navigator url="/pages/addressadd/addressadd">
+      <view class="addressbtn">
+          <view>添加地址</view>
+      </view>
+    </navigator>
+</view>

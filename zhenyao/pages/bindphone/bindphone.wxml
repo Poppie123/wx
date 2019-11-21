@@ -1,0 +1,10 @@
+<view class="page-box">
+  <view class="phone fle align-items space-between">
+      <input class="weui-input" maxlength="11" placeholder="请输入手机号" bindinput="bindPhoneInput"/>
+  </view>
+  <view class="code fle align-items space-between">
+   <input class="weui-input" maxlength="4" placeholder="请输入验证码" bindinput="bindCodeInput"/>
+   <view class="getcode" bindtap="getCode">{{time}}</view>
+  </view>
+  <button size="default" bindtap="bindPhone">绑定</button>
+</view>

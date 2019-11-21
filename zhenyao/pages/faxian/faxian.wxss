@@ -1,0 +1,76 @@
+/* pages/faxian/faxian.wxss */
+.s-list{
+    margin-top: 20rpx;
+}
+.l-img{
+  width: 338rpx;
+  height: 338rpx;
+  border-radius: 8rpx;
+}
+.l-img image{
+  width: 338rpx;
+  height: 338rpx;
+}
+.l-bot{
+  width: 338rpx;
+  padding: 10rpx;
+}
+.l-bot view{
+  font-size:32rpx;
+  color: #333333;
+  margin: 16rpx 0 10rpx 0;
+}
+.l-bot view{
+  color: #999999;
+  font-size: 24rpx;
+}
+.l-bot view:nth-child(2){
+  margin: 20rpx 0 10rpx 0;
+}
+.l-bot view text:nth-child(1){
+  font-size: 36rpx;
+  color: #E59905;
+  font-weight: bold;
+}
+.l-bot view text:nth-child(2){
+  font-size: 24rpx;
+  color: #999999;
+  text-decoration: line-through;
+  margin-left:10rpx;
+}
+.list:nth-child(2n +1){
+  float: left;
+  margin-left: 8rpx;
+  margin-bottom: 12rpx;
+  border: 2rpx solid #F3F3F3;
+}
+.list:nth-child(2n){
+  float: right;
+  margin-right: 8rpx;
+  margin-bottom: 12rpx;
+  border: 2rpx solid #F3F3F3;
+}
+.dazhe{
+  font-size: 20rpx;
+  color: #E59905;
+  padding: 0 10rpx;
+  border: 2rpx solid #E59905;
+  border-top-left-radius: 18rpx;
+  border-bottom-right-radius: 18rpx;
+  margin-left: 10rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+}
+.pin{
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  background: #8773DF;
+  border-radius: 4rpx;
+  color: #fff;
+  font-size: 20rpx;
+  display: inline-block;
+  text-align: center;
+  margin-right:10rpx;
+  font-weight: normal;
+}

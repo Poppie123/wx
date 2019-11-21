@@ -1,0 +1,64 @@
+{
+  "pages": [
+    
+    "pages/main/main",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/car/car",
+    "pages/search/search",
+    "pages/faxian/faxian",
+    "pages/userinfo/userinfo",
+    "pages/bindphone/bindphone",
+    "pages/goodsdetail/goodsdetail",
+    "pages/pinpai/pinpai",
+    "pages/goodslist/goodslist",
+    "pages/aboutme/aboutme",
+    "pages/submitorder/submitorder",
+    "pages/addresslist/addresslist",
+    "pages/fenlei/fenlei",
+    "pages/addressadd/addressadd"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#8773DF",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "首页",
+        "iconPath": "images/page1.png",
+        "selectedIconPath": "images/page1_active.png"
+      },
+      {
+        "pagePath": "pages/fenlei/fenlei",
+        "text": "分类",
+        "iconPath": "images/page2.png",
+        "selectedIconPath": "images/page2_active.png"
+      },
+      {
+        "pagePath": "pages/faxian/faxian",
+        "text": "发现",
+        "iconPath": "images/page3.png",
+        "selectedIconPath": "images/page3_active.png"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "text": "购物车",
+        "iconPath": "images/page4.png",
+        "selectedIconPath": "images/page4_active.png"
+      },
+      {
+        "pagePath": "pages/userinfo/userinfo",
+        "text": "我的",
+        "iconPath": "images/page5.png",
+        "selectedIconPath": "images/page4_active.png"
+      }
+    ]
+  }
+}

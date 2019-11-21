@@ -1,0 +1,40 @@
+.logo{
+  width: 174rpx;
+  height: 174rpx;
+  margin: 0 auto;
+}
+.logo image{
+   width: 174rpx;
+  height: 174rpx;
+  border-radius: 10rpx;
+}
+.main{
+  text-align: center;
+}
+.main view{
+  color: #333C3C;
+  font-size: 32rpx;
+  margin-top: 38rpx;
+  margin-bottom: 0;
+}
+.main view:nth-child(3){
+  color: #333C3C;
+  font-size:20rpx;
+}
+.main view:nth-child(4){
+  color: #999999;
+  font-size: 24rpx;
+  margin-top: 140rpx;
+  line-height: 48rpx;
+  padding: 0 54rpx;
+}
+/*版权*/
+.banben{
+  width: 100%;
+  position: absolute;
+  bottom: 110rpx;
+}
+.banben view{
+  font-size: 20rpx;
+  text-align: center;
+}

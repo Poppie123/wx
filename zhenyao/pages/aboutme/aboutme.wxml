@@ -1,0 +1,11 @@
+
+<view class="main">
+  <view class="logo">
+    <image src="https://gitee.com/wulianglaoge/line-img/raw/master/about.png"></image></view>
+    <view>真要商城</view>
+    <view>Dark net tide card</view>
+    <view id="message"></view>
+  <view class="banben">
+    <view>coporight @ 真要商城有限公司</view>
+  </view>
+</view>

@@ -1,0 +1,93 @@
+.main {
+  margin: 0;
+}
+view{
+  box-sizing: border-box;
+}
+/*地址*/
+
+.addresslist {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.address-mess {
+  padding: 30rpx 28rpx;
+  border-bottom: 2rpx solid #e1e1e1;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.address-mess p {
+  font-size: 28rpx;
+  color: #999;
+  line-height: 50rpx;
+}
+
+.address-mess p span {
+  font-size: 32rpx;
+  color: #333;
+  margin-right:40rpx;
+}
+
+.address-chos {
+  width: 100%;
+  padding: 30rpx 28rpx;
+  line-height:24rpx;
+}
+
+/*单选按钮*/
+
+
+/*删除编辑*/
+
+.address-chos label {
+  margin-right: 14rpx;
+}
+
+.address-chos label span {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.address-chos span.shanchu {
+  padding: 4rpx 16rpx;
+  margin: 0 40rpx;
+  border: 2rpx solid #ddd;
+  color: #333c3c;
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+
+.address-chos span.bianji {
+  padding: 4rpx 16rpx;
+  background: #8773df;
+  border: 2rpx solid #8773df;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+
+/*底部添加地址*/
+
+.addressbtn {
+  width: 100%;
+  padding: 0 44rpx;
+  text-align: center;
+  background: #f6f6f6;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.addressbtn p {
+  border: 2rpx solid #333c3c;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 50rpx;
+  color: #333c3c;
+  font-size: 32rpx;
+}

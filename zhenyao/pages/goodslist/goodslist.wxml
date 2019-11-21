@@ -1,0 +1,38 @@
+<view class="main">
+  <view id="menu" class="ul-tab fle fle_b" wx:if="{{isShowNav}}">
+    <view class="{{sortType == 1 ? 'active' : ''}}" data-order="1" bindtap="changeSortType">
+      <view>综合排序</view>
+    </view>
+    <view class="{{sortType == 3 || sortType == 4 ? 'fle fle_a_c active' : 'fle fle_a_c'}}" data-order="4" bindtap="changeSortType">
+      <view>价格</view>
+      <view>
+        <text class="{{sortType == 4 ? 'icon iconfont icon-shang active' : 'icon iconfont icon-shang'}}" data-order="4" bindtap="changeSortType"></text>
+        <text class="{{sortType == 3 ? 'icon iconfont icon-xia active' : 'icon iconfont icon-xia'}}" data-order="3" bindtap="changeSortType"></text>
+      </view>
+    </view>
+    <view class="{{sortType == 5 || sortType == 6 ? 'fle fle_a_c active' : 'fle fle_a_c'}}"  data-order="6" bindtap="changeSortType">
+      <view>销量</view>
+      <view>
+        <text class="{{sortType == 6 ? 'icon iconfont icon-shang active' : 'icon iconfont icon-shang'}}" data-order="6"></text>
+        <text class="{{sortType == 5 ? 'icon iconfont icon-xia active' : 'icon iconfont icon-xia'}}" data-order="5"></text>
+      </view>
+    </view>
+  </view>
+  <view class="s-list mui-clearfix">
+
+      <view class="list" wx:for="{{list}}" wx:key="index" bindtap="toGdsDetail" data-id="{{item.id}}">
+        <view class="l-img">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="l-bot">
+          <view class="w_s">{{item.goods_name}}</view>
+          <view class="clearfloat">
+            <text>¥{{item.shop_price}}</text>
+            <text>￥{{item.market_price}}</text>
+          </view>
+          <view>销量：{{item.sales}}</view>
+        </view>
+      </view>
+  
+  </view>
+</view>

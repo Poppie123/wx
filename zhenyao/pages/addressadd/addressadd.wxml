@@ -1,0 +1,29 @@
+<view class="main">
+  <view class="item fle fle_s align-items">
+    <view class="concat">联系人：</view>
+    <input class="weui-input" auto-focus placeholder="请输入联系人姓名" bindinput="userNameChange"/>
+  </view>
+  <view class="item fle fle_s align-items">
+    <view class="concat">性别：</view>
+    <radio-group name="radio-group">
+      <label wx:for="{{sexArr}}" wx:key="index" ><radio value="{{item.name}}" color="#8773DF" checked="{{item.checked}}"/>{{item.name}}</label>
+    </radio-group>
+  </view>
+  <view class="item fle fle_s align-items">
+    <view class="concat">手机号：</view>
+    <input class="weui-input" maxlength="11" placeholder="请输入手机号" bindinput="userPhoneChange" />
+  </view>
+  <view class="item fle fle_s align-items">
+    <view class="concat">选择地区：</view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region[0]}}，{{region[1]}}，{{region[2]}}
+      </view>
+    </picker>
+  </view>
+  <view class="item fle fle_s align-items">
+    <view class="concat">具体地址：</view>
+    <textarea bindblur="bindTextAreaBlur" bindinput="textValueChange" auto-height placeholder="请输入具体地址" />
+  </view>
+  <button size="default" bindtap="saveAddress">保存</button>
+</view>

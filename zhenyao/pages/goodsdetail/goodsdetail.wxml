@@ -1,0 +1,212 @@
+
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="main">
+	   <view class="banner">
+		  <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{gdsDtl.goods_imgs}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item.img}}" class="slide-image" width="355" height="150"/>
+          </swiper-item>
+        </block>
+      </swiper>
+	   </view>
+	  
+	  <view class="detail">
+	  	 <view class="price clearfloat">
+	  	 	<text class="fl">￥{{gdsDtl.shop_price}}</text>
+	  	 	<text class="fr">已售：{{gdsDtl.sales}}</text>
+	  	 </view>
+	  	 <view class="jifen">
+	  	 	<text>￥{{gdsDtl.market_price}}</text>
+	  	 </view>
+	  	 <view class="title"><text></text>{{gdsDtl.goods_name}}</view>
+	  </view>
+	  
+	  <!--正品保障-->
+	  <view class="baozheng fle">
+	  	<view>
+	  		<text class="icon iconfont icon-brandauthority"></text>
+	  		<text>正品无忧</text>
+	  	</view>
+	  	<view>
+	  		<text class="icon iconfont icon-accountsecuriyt"></text>
+	  		<text>权威检测</text>
+	  	</view>
+	  	<view>
+	  		<text class="icon iconfont icon-entcertification"></text>
+	  		<text>香港直邮</text>
+	  	</view>
+	  	<view>
+	  		<text class="icon iconfont icon-7day"></text>
+	  		<text>7天无忧退货</text>
+	  	</view>
+	  </view>
+	  
+	  <view class="xuanze">
+	  	<view class="detail-num fle fle_b" bindtap="openGuigeBox">
+	  		<view class="font14 cor9">选择规格</view>
+	  		<view class="leibie">
+	  			<text class="font14 cor3">{{currentGuigeItem.attr}}</text>
+	  			<text class="icon iconfont icon-jinru"></text>
+	  		</view>
+	  	 </view>
+	  	 
+	  	 <view class="detail-num fle fle_b">
+	  		<view class="font14 cor9">数量</view>
+	  		<view class="choose choose2 fle">
+	  			<text class="choose-sp1" bindtap="reduceGdsNum">-</text>
+          <view class="goods-num">{{goodsNum}}</view>
+	  			<text class="choose-sp2" bindtap="addGdsNum">+</text>
+	  		</view>
+	  	 </view>
+	  </view>
+	 <!--评价-->
+	  <view class="pingjia">
+	  	<view class="pjtit clearfloat">
+	  		<view class="pj-lf fl">
+	  			<text> 商品评价</text>
+	  			<text>（{{gdsDtl.appraise.appraise_count}}人评价）</text>
+            </view>
+            <text class="icon iconfont icon-gengduo fr"></text>
+	  	</view>
+	  	<view class="pjcen" wx:for="{{gdsDtl.appraise.appraise_list}}" wx:key="index">
+	  		<view class="pjtop fle fle_b fle_a_c">
+	  			<view class="pj-img fle fle_a_c">
+            <image src="{{ item.user.headimg }}"></image>
+	  				<text>{{ item.user.username }}</text>
+	  			</view>
+	  			<view class="fle fle_a_c">
+	  				<view class="xingji">
+		  				<text class="{{ item.appraise_star >= 1 ? 'icon iconfont icon-star active' :'icon iconfont icon-star'}}"></text>
+		  				<text class="{{ item.appraise_star >= 2 ? 'icon iconfont icon-star active' :'icon iconfont icon-star'}}"></text>
+		  				<text class="{{ item.appraise_star >= 3 ? 'icon iconfont icon-star active' :'icon iconfont icon-star'}}"></text>
+		  				<text class="{{ item.appraise_star >= 4 ? 'icon iconfont icon-star active' :'icon iconfont icon-star'}}"></text>
+		  				<text class="{{ item.appraise_star >= 5 ? 'icon iconfont icon-star active' :'icon iconfont icon-star'}}"></text>
+		  			</view>
+		  			<view class="pingfen">{{item.appraise_star}}分</view> 
+	  			</view>
+	  		</view>
+	  		<view class="ptime">{{ item.create_time }}</view>
+		  	<view class="pmain">{{ item.content }}</view>
+		  	<view class="upload fle fle_b">
+          <!-- <image src="https://gitee.com/wulianglaoge/line-img/raw/master/upimg.png"></image>
+          <image src="https://gitee.com/wulianglaoge/line-img/raw/master/upimg.png"></image>
+          <image src="https://gitee.com/wulianglaoge/line-img/raw/master/upimg.png"></image> -->
+		  	</view>
+		</view>
+	  </view>
+	  
+	  <view class="dianpu fle fle_b fle_a_c" bindtap="linkPinpai">
+	  	<view class="fle fle_a_c">
+	  		<view class="dpimg">
+          <image src="{{ shopDtl.brand_info.pic }}"></image>
+	  		</view>
+	  		<view class="dptit">
+	  			<view class="dpname font16 cor3">{{ shopDtl.brand_info.name}}</view>
+	  			<view class="dpmess font12 cor9">在售商品{{ shopDtl.count }}个</view>
+	  		</view>
+	  	</view>
+	  	<view class="font14 cor9" data-id="{{shopDtl.brand_info.id}}" >
+	  		<text>进入品牌</text>
+	  		<text class="icon iconfont icon-tubiao_gengduo"></text>
+	  	</view>
+	  </view>
+	  
+	  <!--产品详情-->
+	  <view class="pshow">
+	  	<view class="pjtit clearfloat">
+	  		<view class="pj-lf fl">
+	  			<text>商品详情</text>
+        </view>
+	  	</view>
+	  </view>
+	  
+	  <view class="show-img">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  	  </view>
+  	  
+  	  <view class="pshow">
+	  	<view class="pjtit clearfloat">
+	  		<view class="pj-lf fl">
+	  			<text>大家都在买</text>
+           </view>
+	  	</view>
+	  	
+	  	<view class="dajia clearfloat">
+	  		<view class="djlist" wx:for="{{allBuyList}}" wx:key="index">
+          <image src="{{item.img}}"></image>
+	  			<view class="djcen font14 cor3 w_s al-name">{{item.goods_name}}</view>
+	  			<view class="djcen font14 cor3">￥{{item.shop_price}}</view>
+	  		</view>
+	  		
+	  	</view>
+	  </view>
+  	
+</view>
+<view class="bg_rgba" wx:if="{{guigeBox}}" bindtap="closeGuigeBox"></view>
+	<view class="{{guigeBox ? 'xztc xztcactive' : 'xztc'}}" >
+		<view class="xztcen">
+			<view class="shangpin clearfloat">
+				<view class="sp-lf">
+          <image src="{{currentGuigeItem.img}}"></image>
+				</view>
+				<view class="sp-rg">
+					<view class="w_s">{{gdsDtl.goods_name}}</view>
+					<view class="cored">￥{{currentGuigeItem.price}}</view>
+					<view class="jifen">
+				  	 	<text>￥{{gdsDtl.market_price}}</text>
+				  </view>
+				</view>
+			</view> 
+			
+			<view class="guize">
+				<view class="tctit">规格</view>
+				<view class="fle  fle_w">
+					<view class="{{currentGuigeIdx == index ? 'guige-item active' : 'guige-item'}}" wx:for="{{gdsDtl.attribute}}" wx:key="index" bindtap="changeGuige" data-idx="{{index}}">{{item.attr}}</view>
+				</view>
+			</view>
+			
+			
+			<view class="detail-num fle fle_b shuliang">
+		  		<view class="font14 cor9">数量</view>
+		  		<view class="choose choose2 fle">
+		  			<text class="choose-sp1" bindtap="reduceGdsNum">-</text>
+            <view class="goods-num">{{goodsNum}}</view>
+		  			<text class="choose-sp2" bindtap="addGdsNum">+</text>
+		  		</view>
+		  	 </view>
+		 </view>
+	  	 
+	  	 <view class="tcfoot">
+	  	 	<view class="foot1 fl">
+	  	 		<text>合计金额:</text>
+	  	 		<text>￥{{allPrice}}</text>
+	  	 	</view>
+	  	 	<view class="foot2 fl" bindtap="addCar">加入购物车</view>
+			<view class="foot3 fl" bindtap="getToOrder">立即购买</view>
+	  	</view>
+	</view>
+	
+	<view class="footer clearfloat">
+		<view class="foot1 fl">
+      <view>
+        <navigator open-type="switchTab" url="/pages/car/car">
+          <view class="icon iconfont icon-gouwuche1"></view>
+          <view class="font12 cor3">购物车</view>
+        </navigator>
+      </view>
+			<view>
+        <button open-type="concat">
+          <view class="icon iconfont icon-kefu"></view>
+          <view class="font12 cor3">客服</view>
+        </button>
+			</view>
+			<view class="{{isCollect ? 'shoucang active' : 'shoucang'}}" bindtap="collectGds">
+				<view class="icon iconfont icon-ziyuan iconsc"></view>
+				<view class="font12 cor3">收藏</view>
+			</view>
+		</view>
+		<view class="foot2 fl" bindtap="addCar">加入购物车</view>
+		<view class="foot3 fl" bindtap="getToOrder">立即购买</view>
+	</view>

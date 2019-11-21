@@ -1,0 +1,59 @@
+<view class="main">
+    <view>
+        <view class="dianpu fle fle_b fle_a_c">
+            <view class="fle fle_a_c">
+                <view class="dpimg">
+                    <image src="{{brandDtl.pic}}"></image>
+                </view>
+                <view class="dptit">
+                    <view id="name" class="dpname font16 cor3">{{brandDtl.name}}</view>
+                    <view class="dpmess font12 cor9">相关商品<span id="count">{{brandDtl.count}}</span>个</view>
+                </view>
+            </view>
+            <view class="font14 cor9">
+                <view id="attention" class="guanzhu" wx:if="{{brandDtl.is_guanzhu == 0}}" bindtap="followShop">关注</view>
+                <view id="attention" class="guanzhu" wx:else bindtap="followShop">已关注</view>
+            </view>
+        </view> 
+        <view class="baozheng">
+            <image src="https://gitee.com/wulianglaoge/line-img/raw/master/zpbz.png"></image>
+        </view>
+        <view id="desc" class="showcen font12 cor3" wx:if="{{brandDtl.desc}}">{{brandDtl.desc}}</view>
+    </view>
+    <view>
+        <view id="menu" class="ul-tab fle fle_b">
+            <view class="{{sortType == 1 ? 'active' : ''}}" data-order="1" bindtap="changeSort">
+                <view>综合排序</view>
+            </view>
+            <view class="{{sortType == 3 || sortType == 4 ? 'fle fle_a_c active' : 'fle fle_a_c'}}" data-order="4" bindtap="changeSort">
+                <view>价格</view>
+                <view>
+                    <text class="{{sortType == 4 ? 'icon iconfont icon-shang active' : 'icon iconfont icon-shang'}}" data-order="4"></text>
+                    <text class="{{sortType == 3 ? 'icon iconfont icon-xia active' : 'icon iconfont icon-xia'}}" data-order="3"></text>
+                </view>
+            </view>
+            <view class="{{sortType == 5 ||  sortType == 6 ? 'fle fle_a_c active' : 'fle fle_a_c'}}" data-order="6" bindtap="changeSort">
+                <view>销量</view>
+                <view>
+                    <text class="{{sortType == 6 ? 'icon iconfont icon-shang active' : 'icon iconfont icon-shang'}}" data-order="6"></text>
+                    <text class="{{sortType == 5 ? 'icon iconfont icon-xia active' : 'icon iconfont icon-xia'}}" data-order="5"></text>
+                </view>
+            </view>
+        </view>
+        <view class="s-list">
+            <view class="list" wx:for="{{brandGds}}" wx:key="index">
+              <view class="l-img">
+                <image src="{{item.img}}"></image>
+              </view>
+              <view class="l-bot">
+                <view class="w_s">{{item.goods_name}}</view>
+                <view class="clearfloat">
+                  <text>¥{{item.shop_price}}</text>
+                  <text>￥{{item.market_price}}</text>
+                </view>
+                <view>销量：{{item.sales}}</view>
+              </view>
+            </view>
+        </view>
+    </view>
+</view>

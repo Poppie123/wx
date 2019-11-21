@@ -1,0 +1,106 @@
+<view class="main">
+  <view class="address">
+    <view class="fle fle_b fle_a_c">
+      <view class="address-cen1">
+          <view class="fle">
+            <text class="sp1">姓名：</text>
+            <text id="name" class="sp2">{{address.name}}</text>
+          </view>
+          <view class="fle">
+            <text class="sp1">电话：</text>
+            <text id="phone" class="sp2">{{address.phone}}</text>
+          </view>
+          <view class="fle">
+            <text class="sp1">地址：</text>
+            <text id="address" class="sp2">{{address.address_text.province_text}} {{address.address_text.city_text}} {{address.address_text.district_text}}</text>
+          </view>
+      </view>
+      <view class="icon iconfont icon-tubiao_gengduo"></view>
+    </view>
+  </view>
+  <view class="splist">
+    <!-- 商品信息 -->
+    <view id="list">
+      <view class="clearfloat" wx:for="{{goodsInfo}}" wx:key="index">
+        <view class="spimg">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="spcen">
+          <view class="w_s_2">{{item.goods_name}}</view>
+          <view class="font12 cor9">{{item.attr}}</view>
+          <view class="price">
+            <text class="fl">￥{{item.price}}</text>
+            <text class="fr">x{{item.goods_num}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 优惠券 -->
+    <view class="fjf">
+      <view class="openTck jifen clearfloat">
+        <view class="fl cor9 font14">优惠券</view>
+        <view class="fr">
+          <text id="remarks" class="font14 cor3"></text>
+          <text class="icon iconfont icon-tubiao_gengduo"></text>
+        </view>
+      </view>
+      <view>
+        <view class="tcbox" style="z-index: 400;">
+          <view class="tctitle">请选择优惠券：</view>
+          <view id='discount_info' data-discount_id="0" data-coupon_equal="0">
+            <!-- <view class="tclist fle fle_b fle_a_c">
+              <view class="yhtit font12 cor6">省50元，通用优惠券：￥50</view>
+              <view class="yhint">
+                <input type="radio" class="xuanzhong1" name="youhuiquan" checked="checked"/>
+              </view>
+            </view> -->
+          </view>
+          <view id="discount_queding" class="queding">确定</view>
+        </view>
+        <view class="modal"></view>
+      </view>
+    </view>
+    <!-- 积分 -->
+    <view class="jifen clearfloat fjf">
+      <view class="fl">
+        <view class="font14 cor9">积分抵现</view>
+      </view>
+      <view class="fr jfnum fle fle_a_c">
+        <text class="font14 cor3">可使用<text id="score"></text>积分抵￥<text id="score_to_money">20.00</text></text>
+        <checkbox class="jifen-check" value="checkbox1" checked="{{false}}"/>
+      </view>
+    </view>
+    <!-- 备注 -->
+    <view class="beizhu">
+      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="*选填" />
+    </view>
+    <!-- 小计 -->
+    <view class="count">
+      <view class="font12">
+        <text class="cor3 marr10">共<text id="goods_num"></text>{{otherDt.goods_num}}件商品</text>
+        <text class="cor9">合计：</text>
+        <text class="font14 cnum cor3"><text class="fuhao">￥</text><text class="total_fee">{{otherDt.total_fee}}</text></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="tck">
+    <view class="kuang">
+      <view class="kuang-t">优惠稍纵即逝，真的要走吗？</view>
+      <view class="kuang-b flex space-between align-center">
+        <text class="quyi">去意已决</text>
+        <text class="zaixiang">再想想</text>
+      </view>
+    </view>
+    <view class="modal"></view>
+  </view>
+</view>
+<view class="footer clearfloat">
+  <view class="foot1 fl">
+    <text class="heji">合计金额：</text>
+    <text><text class="fuhao2">￥{{otherDt.total_fee}}</text><text class="total_fee"></text></text>
+  </view>
+  <view id="placeOrder" class="foot2 fr" bindtap="createOrder">
+    立即下单
+  </view>
+</view>

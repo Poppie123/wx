@@ -1,0 +1,297 @@
+.main{
+  margin: 0;
+}
+.address {
+  width: 100%;
+  padding: 18rpx 24rpx 36rpx 28rpx;
+  background: #ffffff url(https://gitee.com/wulianglaoge/line-img/raw/master/address_border.png) no-repeat bottom center;
+  background-size: contain;
+  border-top: 2rpx solid #F2F2F2;
+}
+.address-cen1{
+  width: 600rpx;
+  padding: 20rpx 0;
+}
+.address-cen1 view:nth-child(2) {
+  margin: 20rpx 0;
+}
+
+.address-cen1 view text.sp1 {
+  color: #999999;
+  width: 120rpx;
+  font-size: 28rpx;
+}
+
+.address-cen1 view text.sp2 {
+  color: #666666;
+  width: 80%;
+  font-size: 32rpx;
+}
+/*没有选择地址*/
+.address-cen2 {
+  padding:60rpx 0;
+}
+.address-cen2 text{
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.address-cen2 view text.iconfont {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+
+/*商品列表*/
+.splist{
+  background: #ffffff;
+  margin-top:20rpx;
+}
+  #list {
+  padding: 0 28rpx;
+  }
+.spimg{
+  width: 146rpx;
+  height: 146rpx;
+  float: left;
+}
+.spimg image{
+  width: 146rpx;
+  height: 146rpx;
+}
+.spcen{
+  width: 528rpx;
+  height: 166rpx;
+  float: right;
+  border-bottom: 2rpx solid #EEEEEE;
+  padding-bottom: 24rpx;
+  position: relative;
+}
+.spcen view{
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 34rpx;
+  margin: 0;
+  font-weight: normal;
+}
+.spcen .w_s_2{
+  margin-bottom: 12rpx;
+}
+.price{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 20rpx;
+}
+.price text:nth-child(1){
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+.price text:nth-child(2){
+  font-size: 28rpx;
+  color: #333333;
+}
+.count{
+  text-align: right;
+  padding: 24rpx 28rpx;
+}
+.count .cnum{
+  font-weight: bold;
+}
+
+/*备注*/
+.beizhu{
+  padding: 24rpx 28rpx;
+  border-top: 2rpx solid #EEEEEE;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+
+.beizhu textarea{
+  width: 100%;
+  height: 40rpx;
+  font-size: 24rpx;
+  color: #333333;
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 10rpx;
+}
+.count{
+  text-align: right;
+  padding:24rpx 0;
+}
+
+/*积分*/
+.jifen{
+  padding:24rpx 28rpx;
+  border-top: 2rpx solid #EEEEEE;
+  position: relative;
+}
+
+.jifen .jfnum input.xuanzhong1{
+
+}
+.jifen .icon-tubiao_gengduo{
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+
+/*支付方式*/
+.zhifu{
+  background: #fff;
+  padding: 0 28rpx 24rpx 28rpx;
+}
+.zhifu view{
+  padding: 24rpx 0;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.zhifu view text{
+  font-size: 32rpx;
+  color: #333333;
+  padding-left:20rpx;
+  line-height: 32rpx;
+  border-left: 6rpx solid #8773DF;
+}
+.zflist{
+  margin-top:30rpx;
+}
+.zf-rg{
+  width: 580rpx;
+  padding: 10rpx 28rpx;
+}
+.zf-rg view{
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: normal;
+  margin: 0;
+}
+.zf-rg view{
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 6rpx;
+}
+.zf-rg view text{
+  font-size: 24rpx;
+  color: #333;
+}
+.zf-lf image{
+  width: 88rpx;
+  height: 88rpx;
+}
+
+
+/*底部*/
+.footer{
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+.foot1{
+  width: 50%;
+  height: 98rpx;
+  background: #FFFFFF;
+}
+.foot1 text:nth-child(1){
+  font-size: 28rpx;
+  color: #333333;
+}
+.foot1 text:nth-child(2){
+  font-size: 36rpx;
+  color: #E59905;
+  font-weight: bold;
+}
+.foot1 text:nth-child(2) text {
+  font-size: 36rpx;
+  color: #E59905;
+  font-weight: bold;
+}
+.foot2{
+  width: 50%;
+  height: 98rpx;
+  background: #8773DF;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+/*弹窗*/
+.tcbox{
+  width: 750rpx;
+  background: #fff;
+  position: fixed;
+  bottom: -800rpx;
+  z-index: 65;
+  padding: 50rpx 28rpx;
+}
+.tctitle{
+  border-left: 4rpx solid #8773DF;
+  padding-left: 20rpx;
+  line-height: 28rpx;
+  margin-bottom: 40rpx;
+}
+.tclist{
+  margin-top: 30rpx;
+}
+
+.queding{
+  width: 224rpx;
+  height: 76rpx;
+  background: #8773DF;
+  line-height: 76rpx;
+  border-radius: 38rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  margin:0 auto;
+  margin-top: 60rpx;
+}
+.main {
+  margin-bottom: 100rpx;
+}
+.tck .kuang {
+  position: fixed;
+  background: #fff;
+  z-index: 400;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 694rpx;
+  height: 372rpx;
+  border-radius: 10rpx;
+  padding: 70rpx;
+  padding-top:90rpx;
+  display: none;
+}
+.tck .kuang .kuang-t {
+  font-size: 36rpx;
+  text-align: center;
+}
+.tck .kuang .kuang-b {
+  text-align: center;
+  margin-top: 70rpx;
+}
+.tck .kuang .kuang-b span {
+  display: inline-block;
+  width: 238rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  border-radius: 60rpx;
+  font-size: 32rpx;
+}
+.tck .kuang .kuang-b span.quyi {
+  border: 2rpx solid #8773DF;
+}
+.tck .kuang .kuang-b span.zaixiang {
+  color: #fff;
+  background: #8773DF;
+}
+.modal {
+  opacity: .5 !important;
+}
+.jifen-check{
+  margin-left: 20rpx;
+}

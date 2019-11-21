@@ -1,0 +1,33 @@
+
+<view class="s-list">
+  <view class="list" wx:for="{{ list }}" wx:key="index">
+    <view class="l-img">
+      <image src="{{ item.img }}"></image>
+    </view>
+    <view class="l-bot">
+      <view class="w_s">{{ item.goods_name }}</view>
+      <view class="clearfloat">
+        <text>¥{{ item.shop_price }}</text>
+        <text>￥{{ item.market_price }}</text>
+      </view>
+      <view>销量：{{ item.sales }}</view>
+    </view>
+  </view>
+  
+  <!-- <view class="list">
+    <view class="l-img">
+      <img src="../../image/upimg.png" />
+    </view>
+    <view class="l-bot">
+      <h4 class="w_s">swisse钙加维生素...</h4>
+      <p class="clearfloat">
+        <span>¥149</span>
+        <span>￥180</span>
+        <span class="dazhe">8.7折</span>
+      </p>
+      <p>销量：365</p>
+    </view>
+  </view> -->
+  
+  
+</view>

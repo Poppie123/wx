@@ -1,0 +1,188 @@
+<view class="mui-bar mui-bar-nav fle">
+  <view class="search fle fle_a_c" bindtap="toSearch">
+    <image src="../../images/sort.png"></image>
+    <input type="text" placeholder="请输入关键词" />
+  </view>
+  <view class="icon iconfont icon-tongzhi-hui"></view>
+</view>
+<view class="swiper-box">
+  <swiper indicator-dots="{{indicatorDots}}" indicator-active-color="#8773DF" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image wx:if="{{item.banner}}" src="{{ item.banner }}" class="slide-image"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="tips">
+    <swiper class="tips-item" vertical='true' autoplay='true' circular='true' interval='3000'>
+      <block wx:for='{{noticeList}}' wx:key='index'>
+        <swiper-item>
+          <view>{{item.context}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- <view class="tips-item">用户156****8888收藏了兰芝精华...</view> -->
+  </view>
+</view>
+<view class="zpbz">
+  <image src="../../images/zpbz.png"></image>
+</view>
+
+<!--导航-->
+<view class="shnav clearfloat">
+  <view wx:for="{{menuList}}" wx:key="index" data-catid="{{item.id}}" data-title="{{item.name}}" bindtap="toGdslist">
+    <image src="{{ item.pic }}"></image>
+    <view>{{ item.name }}</view>
+  </view>
+  <!-- <view>
+   <image src = "../../images/i2.png"></image>
+    <view>营养健康</view>
+  </view> -->
+</view>
+
+<view class="huodong clearfloat">
+  <view class="hdlf fl" bindtap="toHotsales">
+    <view class="hdtit fle fle_a_c">
+      <span>热销商品</span>
+      <image src="../../images/top.png"></image>
+    </view>
+    <view class="hdcen">
+      <image src="https://gitee.com/wulianglaoge/line-img/raw/master/banner.png"></image>
+    </view>
+  </view>
+  <view class="hdlf fl tuangou">
+    <view class="hdtit fle fle_a_c">
+      <span>团购</span>
+      <image src="../../images/pintuan.png" class="tuangouimg"></image>
+    </view>
+    <view class="hdcen">
+      <image src="https://gitee.com/wulianglaoge/line-img/raw/master/sp1.png"></image>
+    </view>
+  </view>
+</view>
+<!-- 精选专场 -->
+
+<view class="cpai">
+  <view class="title">
+    <image src="../../images/tit1.png"></image>
+  </view>
+  <view class="ad">
+    <image src="https://gitee.com/wulianglaoge/line-img/raw/master/shouad.png"></image>
+  </view>
+  <view class="sclist">
+    <view class="slit" wx:for="{{jingxuanGds}}" wx:key="index" data-id="{{item.id}}" bindtap="toGdsDetail">
+      <image src="{{item.img}}"></image>
+      <view class="w_s font14 cor3">{{ item.goods_name }}</view>
+      <view class="font12 cor3">￥
+        <span>{{ item.shop_price }}</span>
+      </view>
+    </view>
+    <view class="slit more" bindtap="toJingxuan">
+      <view class="more1 font14 cor3">查看更多</view>
+      <view class="more2">more</view>
+    </view>
+  </view>
+</view>
+<!-- 商品推荐 -->
+<view class="cpai">
+  <view class="title">
+    <image src="../../images/tit2.png"></image>
+  </view>
+  <view class="ad">
+    <image src="https://gitee.com/wulianglaoge/line-img/raw/master/no_delete.png"></image>
+  </view>
+  <view class="sclist">
+    <view class="slit" wx:for="{{tuijianGds}}" wx:key="index" data-id="{{item.id}}" bindtap="toGdsDetail">
+      <image src="{{item.img}}"></image>
+      <view class="w_s font14 cor3">{{ item.goods_name }}</view>
+      <view class="font12 cor3">￥
+        <span>{{ item.shop_price }}</span>
+      </view>
+    </view>
+    <view class="slit more" bindtap="toTuijian">
+      <view class="more1 font14 cor3">查看更多</view>
+      <view class="more2">more</view>
+    </view>
+  </view>
+</view>
+<!-- 品牌推荐 -->
+
+<!--品牌推荐-->
+<view class="pinpai">
+  <view class="title">
+    <image src="../../images/tit3.png"></image>
+  </view>
+  <view class="pincen clearfloat">
+
+    <view class="plist" wx:for="{{pinpaiList}}" wx:key="index" data-id="{{item.id}}" bindtap="toPinpai">
+      <view class="pimg">
+        <image src="{{item.pic}}"></image>
+      </view>
+      <view class="pname">{{item.name}}</view>
+    </view>
+
+  </view>
+</view>
+
+
+<!-- 国家馆 -->
+<view class="guojia">
+  <view class="title">
+    <image src="../../images/tit4.png"></image>
+  </view>
+  <!-- banner -->
+  <swiper class="guojia-block" indicator-dots="{{indicatorDots}}" indicator-active-color="#8773DF" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="90rpx" next-margin="90rpx" current="0" bindchange="swiperChange">
+    <block wx:for="{{countryList}}" wx:key="index">
+      <swiper-item class="guojia-block" bindtap="toCountryItem" data-id="{{item.id}}" data-name="{{item.name}}">
+        <image mode="aspectFill" src="{{item.pic}}" class="guojia-image {{swiperIndex == index ? 'active' : ''}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 热销产品 -->
+<view class="rexiao">
+  <view class="title">
+    <image src="../../images/tit5.png"></image>
+  </view>
+
+  <view class="s-list">
+    <view class="list" wx:for="{{rexiaoList}}" wx:key="index" data-id="{{item.id}}" bindtap="toGdsDetail">
+      <view class="l-img">
+        <image src="{{ item.img }}"></image>
+      </view>
+      <view class="l-bot">
+        <view class="w_s">{{ item.goods_name }}</view>
+        <view class="clearfloat">
+          <text>¥{{ item.shop_price }}</text>
+          <text>￥{{ item.market_price }}</text>
+        </view>
+        <view>销量：{{ item.sales }}</view>
+      </view>
+    </view>
+
+  </view>
+  <view class="bg_rgba"></view>
+  <view class="tanchuang">
+    <view class="yhcen">
+      <view class="yhbg clearfloat">
+        <view class="yhlf fl">
+          <span>10</span>元</view>
+        <view class="yhrg fr">无条件使用</view>
+      </view>
+
+      <view class="yhbg clearfloat">
+        <view class="yhlf fl">
+          <span>10</span>元</view>
+        <view class="yhrg fr">订单满100元可用</view>
+      </view>
+
+      <view class="yhbg clearfloat">
+        <view class="yhlf fl">
+          <span>10</span>元</view>
+        <view class="yhrg fr">订单满500元可用</view>
+      </view>
+    </view>
+    <text class="icon iconfont icon-guanbi"></text>
+  </view>
+</view>

@@ -1,0 +1,186 @@
+<view class="main">
+    <view class="user-top clearfloat" bindtap="jump">
+        <view class="fl userlf clearfloat">
+            <view class="set uimg fl">
+                <image src="{{userInfo.avatarUrl}}"></image>
+            </view>
+            <view class="uname fr">
+                <view class="fle fle_a_c">
+                    <text class="set font16 w_s" id="username">{{userInfo.nickName}}</text>
+                    <text class="certification renzheng"></text>
+                </view>
+                <view class="set huiyuan fle fle_a_c">
+                    <image src="https://gitee.com/wulianglaoge/line-img/raw/master/vip.png"></image>
+                    <text>普通会员</text>
+                </view>
+            </view>
+        </view>
+        <view class="userg fr">
+            <button open-type="concat">
+              <text id="message" class="icon iconfont icon-xiaoxi2"></text>
+            </button>
+            
+            <!-- <text class="set icon iconfont icon-shezhi"></text> -->
+        </view>
+    </view>
+    <view class="detail">
+        <view class="deltop fle fle_b">
+            <view>
+                <view class="jfnum"></view>
+                <view class="myjf">我的积分</view>
+            </view>
+            <view class="jfbtn" id="zhjifen">
+                <text class="font12">赚积分</text>
+                <text class="icon iconfont icon-tubiao_gengduo"></text>
+            </view>
+        </view>
+        <view class="delbot fle fle_b">
+            <view>
+                <view class="num" id="discount_num">10</view>
+                <view class="font12 cor9">优惠券</view>
+            </view>
+
+            <view>
+                <view class="num" id="watch_brand_num">20</view>
+                <view class="font12 cor9">品牌关注</view>
+            </view>
+            <view>
+                <view class="num" id="goods_collect_num">33</view>
+                <view class="font12 cor9">我的收藏</view>
+            </view>
+            <view id="group">
+                <view class="num" id="group_order_num">40</view>
+                <view class="font12 cor9">拼团订单</view>
+            </view>
+        </view>
+    </view>
+    <view class="ad adyouhui">
+        <image src="https://gitee.com/wulianglaoge/line-img/raw/master/ad.png"></image>
+    </view>
+    <view class="user-dan">
+        <view id="orderAll" class="dan clearfloat">
+            <view class="left">我的订单</view>
+            <view class="fr">
+                <text>查看全部订单</text>
+                <text class="icon iconfont icon-tubiao_gengduo"></text>
+            </view>
+        </view>
+        <view id="order" class="clearfloat">
+            <view data-order_type="1">
+                <text class="icon iconfont icon-daifukuan"></text>
+                <view>待付款</view>
+            </view>
+            <view data-order_type="2">
+                <text class="icon iconfont icon-daifahuo"></text>
+                <view>待发货</view>
+            </view>
+            <view data-order_type="3">
+                <text class="icon iconfont icon-che-tianchong"></text>
+                <view>待收货</view>
+            </view>
+            <view data-order_type="4">
+                <text class="icon iconfont icon-daipingjia"></text>
+                <view>待评价</view>
+            </view>
+            <view data-order_type="11">
+                <text class="icon iconfont icon-tuikuan"></text>
+                <view>售后</view>
+            </view>
+        </view>
+    </view>
+    <view class="ulist">
+        
+        <view class="fle fle_b fle_a_c align-items" data-url="/pages/addresslist/addresslist" bindtap="jump">
+            <view class="limg">
+                <image src="https://gitee.com/wulianglaoge/line-img/raw/master/biao1.png"></image>
+            </view>
+            <view class="lcen fle fle_a_c fle_b" id="dizhi">
+                <view class="font14 cor3">地址管理</view>
+                <view class="icon iconfont icon-tubiao_gengduo"></view>
+            </view>
+        </view>
+       
+        <view class="fle fle_b fle_a_c">
+            <view class="limg">
+                <image src="https://gitee.com/wulianglaoge/line-img/raw/master/biao2.png"></image>
+            </view>
+            <view class="lcen fle fle_a_c fle_b" id="pingjia">
+                <view class="font14 cor3">我的评价</view>
+                <view class="fle fle_a_c">
+                    <text class="icon iconfont icon-tubiao_gengduo"></text>
+                </view>
+            </view>
+        </view>
+        <view class="fle fle_b fle_a_c">
+            <view class="limg">
+                <image src="https://gitee.com/wulianglaoge/line-img/raw/master/biao3.png"></image>
+            </view>
+            <view class="lcen fle fle_a_c fle_b" id="yaoqing">
+                <view class="font14 cor3">分享APP</view>
+                <view class="fle fle_a_c">
+                    <text class="font10 cor9">分享新用户可得20积分</text>
+                    <text class="icon iconfont icon-tubiao_gengduo"></text>
+                </view>
+            </view>
+        </view>
+        <view class="fle fle_b fle_a_c">
+            <button open-type="contact" class="kefu-btn fle fle_b fle_a_c">
+              <view class="limg">
+                  <image src="https://gitee.com/wulianglaoge/line-img/raw/master/biao4.png"></image>
+              </view>
+              <view class="lcen fle fle_a_c fle_b" id="contact">
+                  <view class="font14 cor3">微信客服</view>
+                  <view class="icon iconfont icon-tubiao_gengduo"></view>
+              </view>
+            </button>
+        </view>
+        <view class="fle fle_b fle_a_c">
+            <view class="limg">
+                <image src="https://gitee.com/wulianglaoge/line-img/raw/master/biao5.png"></image>
+            </view>
+            <view class="lcen fle fle_a_c fle_b" id="fankui">
+                <view class="font14 cor3">意见反馈</view>
+                <view class="icon iconfont icon-tubiao_gengduo"></view>
+            </view>
+        </view>
+        <view class="fle fle_b fle_a_c" bindtap="toAboutMe">
+            <view class="limg">
+                <image src="https://gitee.com/wulianglaoge/line-img/raw/master/biao6.png"></image>
+            </view>
+            <view class="lcen fle fle_a_c fle_b" id="aboutus">
+                <view class="font14 cor3">关于我们</view>
+                <view class="icon iconfont icon-tubiao_gengduo"></view>
+            </view>
+        </view>
+        <view class="fle fle_b fle_a_c">
+            <view class="limg">
+                <image src="https://gitee.com/wulianglaoge/line-img/raw/master/biao4.png"></image>
+            </view>
+            <view class="lcen certification fle fle_a_c fle_b">
+                <view class="font14 cor3">实名认证</view>
+                <view class="icon iconfont icon-tubiao_gengduo"></view>
+            </view>
+        </view>
+    </view>
+    <view class="rexiao">
+        <view class="title">
+            <image src="https://gitee.com/wulianglaoge/line-img/raw/master/tit2.png"></image>
+        </view>
+        <view class="s-list">
+          <view class="list" wx:for="{{tuijianList}}" wx:key="index">
+            <view class="l-img">
+              <image src="{{ item.img }}"></image>
+            </view>
+            <view class="l-bot">
+              <view class="w_s">{{ item.goods_name }}</view>
+              <view class="clearfloat">
+                <text>¥{{ item.shop_price }}</text>
+                <text>￥{{ item.market_price }}</text>
+              </view>
+            <view>销量：{{ item.sales }}</view>
+          </view>
+        </view>
+
+        </view>
+    </view>
+</view>

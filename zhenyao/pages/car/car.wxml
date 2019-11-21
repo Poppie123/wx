@@ -1,0 +1,66 @@
+<view class="main">
+  <view>
+    <view class="s-m-list">
+      <checkbox-group bindchange="checkboxChange">
+
+      <slide-slip height="{{250}}" show="{{false}}"  wx:for="{{carList}}" wx:key="index">
+        <view class="m-list clearfloat" slot="left">
+          <view class="m-int fl">
+            <checkbox value="{{index}}" checked="{{item.status}}"/>
+          </view>
+          <view class="m-img fl">
+            <image src="{{item.pic}}"></image>
+          </view>
+
+          <view class="m-cen fr">
+            <view class="ptit w_s_2">{{item.goods_name}}</view>
+            <view class="ptype">{{item.goods_attr_value}}</view>
+            <view class="clearfloat">
+              <view class="fl price">￥{{item.shop_price}}</view>
+              <view class="fr xuan fle fle_a_c">
+                <view class="choose-sp1" data-idx="{{index}}" bindtap="reduceNum">-</view>
+                <view class="choose-num">{{item.goods_num}}</view>
+                <view class="choose-sp2" data-idx="{{index}}" bindtap="addNum">+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view slot="right">
+          <view class='sideslip-red' data-idx="{{index}}" bindtap="onClickDelete">删除</view>
+        </view>
+      </slide-slip>
+      
+    
+      </checkbox-group>
+    </view>
+  </view>
+  <view class="footers">
+    <view class="footer jiesuan clearfloat">
+      <view class="foot1 fl">
+        <view class="fle fle_a_c">
+        <checkbox-group bindchange="checkAllboxChange">
+
+          <checkbox  checked="{{allCheck}}"/>
+          <text>全选</text>
+
+        </checkbox-group>
+        </view>
+      </view>
+      <view class="foot2 fl">
+        <text>合计：</text>
+        <text>￥<text id="totalPrices">{{allPrice}}</text></text>
+      </view>
+      <view id="settlement" class="foot3 fr" bindtap="carCreateOrder">去结算(<text class="amount">{{allNum}}</text>)</view>
+    </view>
+    <view class="footer shanchu clearfloat">
+      <view class="foot1 fl">
+        <view class="fle fle_a_c">
+          <checkbox value="{{allCheck}}" checked="{{allCheck}}"/>
+          <!-- <input type="checkbox" class="checkAll xuanzhong" /> -->
+          <text>全选</text>
+        </view>
+      </view>
+      <view id="del" class="foot3 fr">删除商品(<text class="amount">{{allNum}}</text>)</view>
+    </view>
+  </view>
+</view>
